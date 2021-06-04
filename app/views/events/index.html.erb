@@ -2,3 +2,14 @@
 <section>
   <h1>Events near you</h1>
 </section>
+<div><%= button_to "Create an event", new_event_path, method: :get, :id => "create-button" %></div><br>
+<% @events.each do |event| %>
+  <div>
+    <p><strong><%= link_to event.title, event_path(event) %></strong></p><br>
+    <p><strong>Location: </strong><%= event.location %></p><br>
+    <p><strong>Date: </strong><%= event.date.strftime('%m/%d/%Y') %></p><br>
+    <p><strong>Start Time: </strong><%= event.time.strftime('%H:%M') %></p><br>
+    <% user_name = event.creator.first_name + " " + event.creator.last_name %>
+  <p><strong>Host: </strong><%= user_name %></p><br><br>
+  </div><br>
+<% end %>

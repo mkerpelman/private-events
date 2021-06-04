@@ -102,3 +102,15 @@ a {
   background-color: #3B3434;
   padding: 20px 0;
 }
+
+#create-button {
+  color: white;
+  margin-left: 100px;
+  margin-top: 25px;
+  width: 245px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #3B3434;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+}
