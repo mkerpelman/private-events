@@ -6,5 +6,5 @@
   <p><strong>Date: </strong><%= @event.date.strftime('%m/%d/%Y') %></p><br>
   <p><strong>Start Time: </strong><%= @event.time.strftime('%H:%M') %></p><br>
   <% user_name = @event.creator.first_name + " " + @event.creator.last_name %>
-  <p><strong>Host: </strong><%= link_to user_name, user_path %></p><br>
+  <p><strong>Host:</strong> <%= link_to user_name, user_path(@event.creator_id) %></p>
 </section>

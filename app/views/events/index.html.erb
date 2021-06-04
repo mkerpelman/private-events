@@ -9,7 +9,5 @@
     <p><strong>Location: </strong><%= event.location %></p><br>
     <p><strong>Date: </strong><%= event.date.strftime('%m/%d/%Y') %></p><br>
     <p><strong>Start Time: </strong><%= event.time.strftime('%H:%M') %></p><br>
-    <% user_name = event.creator.first_name + " " + event.creator.last_name %>
-  <p><strong>Host: </strong><%= user_name %></p><br><br>
   </div><br>
 <% end %>
