@@ -1,0 +1,11 @@
+<%= render :partial => "/shared/navbar" %>
+
+  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+
+    <h2 class="form-dividing-text">Organized Events</h2><br>
+    <% @user.created_events.each do |event| %>
+    <p><%=link_to event.title, event_path %></p>
+    <% end %>
+
+
+

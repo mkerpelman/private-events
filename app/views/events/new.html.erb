@@ -1,0 +1,37 @@
+<%= render :partial => "/shared/navbar" %>
+<section>
+  <h1>Create an event</h1>
+
+  <%= form_with model: @event do |f| %>
+
+  <h2 class="form-dividing-text">Event Details</h2>
+
+  <div class="input-div">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true %>
+  </div>
+
+  <div class="input-div">
+    <%= f.label :location %><br />
+    <%= f.text_field :location, autofocus: true %>
+  </div>
+
+  <h2 class="form-dividing-text">Event Start Date & Time</h2>
+
+  <div class="input-div">
+    <%= f.label :date %><br />
+    <%= f.date_field :date, autofocus: true %>
+  </div>
+
+  <div class="input-div">
+    <%= f.label :time %><br />
+    <%= f.time_field :time, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create Event", :class => "button" %>
+  </div>
+
+  <% end %>
+
+</section>
