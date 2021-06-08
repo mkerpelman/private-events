@@ -7,4 +7,9 @@
   <p><strong>Start Time: </strong><%= @event.time.strftime('%H:%M') %></p><br>
   <% user_name = @event.creator.first_name + " " + @event.creator.last_name %>
   <p><strong>Host:</strong> <%= link_to user_name, user_path(@event.creator_id) %></p>
+  
+  <div class="actions">
+    <%= button_to "Attend Event", event_attendances_path(@event), :class => "button" %>
+  </div>
+
 </section>
