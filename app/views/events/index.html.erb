@@ -1,8 +1,10 @@
 <%= render :partial => "/shared/navbar" %>
 <section>
   <h1>Upcoming events</h1>
+<% if user_signed_in? %>
 <div><%= button_to "Create an event", new_event_path, method: :get, :id => "create-button" %></div><br>
-<% @upcoming_events.each do |event| %>
+<% end %>
+<% @events.upcoming.each do |event| %>
   <div>
     <p><strong><%= link_to event.title, event_path(event) %></strong></p><br>
     <p><strong>Location: </strong><%= event.location %></p><br>
@@ -13,7 +15,7 @@
 </section>
 <section>
   <h1>Past events</h1>
-<% @past_events.each do |event| %>
+<% @events.past.each do |event| %>
   <div>
     <p><strong><%= link_to event.title, event_path(event) %></strong></p><br>
     <p><strong>Location: </strong><%= event.location %></p><br>
