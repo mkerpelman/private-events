@@ -3,7 +3,9 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, :except => [:index]
 
   def index
-    @events = Event.order(:date).all
+    # @events = Event.order(:date).all
+    @past_events = Event.where("date < ?", Date.today).order(:date)
+    @upcoming_events = Event.where("date >= ?", Date.today).order(:date)
   end
 
   def new
