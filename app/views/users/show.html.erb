@@ -7,5 +7,10 @@
     <p><%=link_to event.title, event_path(event.id) %></p>
     <% end %>
 
+    <h2 class="form-dividing-text">Attended Events</h2><br>
+    <% @user.attended_events.each do |event| %>
+    <p><%=link_to event.title, event_path(event.id) %></p>
+    <% end %>
+
 
 
