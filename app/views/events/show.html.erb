@@ -13,3 +13,9 @@
   </div>
 
 </section>
+<section>
+  <h2 class="form-dividing-text">Attendees</h2><br>
+  <% @event.attendees.each do |attendee| %>
+  <p><%= attendee.first_name%> <%= attendee.last_name%></p>
+  <% end %>
+
